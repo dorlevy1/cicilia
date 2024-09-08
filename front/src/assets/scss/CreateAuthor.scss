@@ -1,0 +1,103 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$input-border-color: #bdc3c7;
+$button-color: #2980b9;
+$button-hover-color: #1a5980;
+$breakpoint-mobile: 600px;
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+
+  h2 {
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+
+  form {
+    gap: 10px;
+    display: inline-grid;
+    width: 50%;
+    grid-template-columns: 1fr;
+
+    .inputWrapper {
+      gap: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .fileWrapper {
+      border: 2px dotted;
+      width: fit-content;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    label {
+      font-size: 16px;
+      color: $secondary-color;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid $input-border-color;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    select {
+      padding: 10px;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    input[type="file"] {
+      padding: 5px;
+      border: none;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 12px;
+      border: none;
+      background-color: $button-color;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $button-hover-color;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .container {
+    padding: 15px;
+
+    form {
+      width: 100%;
+
+      .inputWrapper {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .fileWrapper {
+        width: 100%;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
